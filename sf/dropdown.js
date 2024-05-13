@@ -1,14 +1,14 @@
 /* DD Mega Menu
 * Created: June 13th, 2011 by DynamicDrive.com. This notice must stay intact for usage 
-* Author: Dynamic Drive at www.dynamicdrive.com/
-* Visit www.dynamicdrive.com/ for full source code
+* Author: Dynamic Drive at //www.dynamicdrive.com/
+* Visit //www.dynamicdrive.com/ for full source code
 */
 
 // July 27th, 11': Added ability to activate menu via "click" of the mouse, on top of the default "mouseover".
 
 jQuery.noConflict()
 
-jQuery.extend(jQuery.easing, {  //see gsgd.co.uk/sandbox/jquery/easing/
+jQuery.extend(jQuery.easing, {  //see //gsgd.co.uk/sandbox/jquery/easing/
 	easeOutBack:function(x, t, b, c, d, s){
 		if (s == undefined) s = 1.70158;
 		return c*((t=t/d-1)*t*((s+1)*t + s) + 1) + b;
