@@ -1,0 +1,126 @@
+:root
+{
+    --primary-color:#2977B0;
+}
+
+.dropdown-content {
+    display: none;
+    background: var(--primary-color);
+    position: absolute;
+    border: 1px solid #ffffff;
+    margin: 0;
+    padding: 0;
+    min-width: 150px;
+
+}
+
+.dropdown > a {
+    display: inline-block;
+    text-decoration: none;
+    color: #333;
+    position: relative; / Position relative /
+}
+
+.dropdown-content li {
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 6px 10px!important;
+    text-decoration: none;
+    color: rgb(255,255,255);
+}
+
+.dropdown-content a:hover {
+    color: rgba(249,116,17,1);
+}
+
+/*style for article*/
+.container-articles{
+    position: absolute;
+    top: 260px;
+    background: rgba(255,255,255,0.8);
+    width: 460px;
+    display: block;
+    padding: 16px  0;
+
+}
+.container-articles::after{
+    content: "";
+    display: block;
+    height: 1px ;
+    background: #cccccc;
+    width: 100%;
+    position: absolute;
+    top: 16px;
+}
+.container-articles::before {
+    content: "";
+    display: block;
+    height: 1px;
+    background: #cccccc;
+    width: 100%;
+    position: absolute;
+    bottom: 16px;
+}
+.new-articles{
+
+    margin-right: 16px;
+}
+.new-articles .list-articles{
+    height: 150px;
+    position: relative;
+    /*height: 100%;*/
+    overflow-y: scroll;
+}
+.new-articles .heading{
+    font-family: 'Open Sans Condensed', sans-serif;
+    margin-top: 3px;
+    font-size: 36px;
+    color: #383838;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0;
+    padding: 10px;
+    text-align: right;
+}
+.new-articles .list-articles{
+    list-style: none;
+    padding: 16px;
+    margin: 0;
+}
+.new-articles .list-articles .article-item a
+{
+    display: inline-block;
+    padding: 6px 12px;
+}
+
+.new-articles .list-articles .article-item a:hover{
+    color: var(--primary-color);
+}
+
+/* style scroll bar*/
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
