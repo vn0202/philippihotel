@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+IN THIS XML FILE YOU WILL FIND GLOBAL SETTINGS FOR THE TEMPLATE AS WELL AS THE FOOTER, MUSIC/YOUTUBE AND SOCIAL ICONS 
+-->
+
+<data>
+	
+	<!-- Change this to true when testing locally on a Mac -->
+	<localTesting>true</localTesting>
+	
+	<settings>
+		
+		<!-- The prefix to your browser titles, this should be the same as the <title> tag in the html page -->
+		<websiteName>PHILIPPI HOTEL| MYKONOS TOWN HOTEL | MYKONOS GREECE</websiteName>
+		
+		<!-- The url of the main template swf -->
+		<templateURL>canvas.swf</templateURL>
+		
+		<!-- The url of your logo, can be image or swf -->
+		<logoURL>images/logo.png</logoURL>
+		
+		<!-- The url to the menu xml file --> 
+		<menuXML>xml/menu.xml</menuXML>
+		
+		<!-- The total height of the menu background -->
+		<menuHeight>125</menuHeight>
+		
+		<!-- The x position of the menu -->
+		<menuX>61</menuX>
+		
+		<!-- Set the top-level menu spacing in pixels -->
+		<menuSpacing>20</menuSpacing>
+		
+		<!-- The right-margin for the logo -->
+		<logoPaddingX>15</logoPaddingX>
+		
+		<!-- The url to the full-background video swf -->
+		<videoBgModule>videobackground.swf</videoBgModule>
+		
+		<!-- This is the swf that will be used for playing all non-youtube video -->
+		<videoSwf>singlevideo.swf</videoSwf>
+		
+		<!-- this is the custom swf that will be used fro playing all youtube video -->
+		<youTubeSwf>youtubeplayer.swf</youTubeSwf>
+		
+		<!-- The message to be displayed for the preloader, HTML supported -->
+		<preloaderMessage><![CDATA[<!-- BEGIN -->LOADING<br />CONTENT<!-- END -->]]></preloaderMessage>
+	
+	</settings>
+	
+	<!-- useFullScreen = Choose to use the full-screen button, true/false -->
+	<!-- useMusic = Choose to use the music player, true/false -->
+	<!-- youeSocial = Choose to use the social icons, true/false -->
+	<footer useFullScreen="true" useMusic="false" useSocial="true">
+		
+		<footerSettings>
+			
+			<!-- The main icon that will activate the footer on mouse over -->
+			<hoverIcon>images/icon.png</hoverIcon>
+			
+			<!-- The footer background color -->
+			<footerBgColor>#FFFFFF</footerBgColor>
+			
+			<!-- The tooltip message for the full-screen button (if used) -->
+			<fullScreenToolTip>ACTIVATE FULL SCREEN</fullScreenToolTip>
+		
+		</footerSettings>
+		
+		<!-- volume = The volume for an mp3 song -->
+		<!-- buffering = The amount of seconds to buffer an mp3 song -->
+		<music volume="100" buffering="3">
+			
+			<youTubeSettings>
+				
+				<!-- The volume of a youtube video -->
+				<volume>100</volume>
+				
+				<!-- The width of the youtube thumbnail, height will be determined automatically -->
+				<videoWidth>200</videoWidth>
+				
+				<!-- The icon that will activate the youtube thumbnail -->
+				<icon>images/youtube.png</icon>
+				
+				<!-- The icon that will be shown on mouse over -->
+				<iconOver>images/youtubeover.png</iconOver>
+				
+				<!-- the total width of your youtube icons (they should be the same size) -->
+				<iconWidth>91</iconWidth>
+				
+				<!-- The 4px youtube thumbnail border -->
+				<borderColor>#FFFFFF</borderColor>
+				
+				<!-- The message that will be displayed for a fullscreen click -->
+				<message>CLICK HERE TO VIEW FULL SCREEN</message>
+				
+				<!-- The message background color -->
+				<messageBgColor>#FFFFFF</messageBgColor>
+				
+				<!-- The message background color on mouse over -->
+				<messageBgColorOver>#000000</messageBgColorOver>
+				
+				<!-- The message text color -->
+				<messageTextColor>#000000</messageTextColor>
+				
+				<!-- The message text color on mouse over -->
+				<messageTextColorOver>#FFFFFF</messageTextColorOver>
+			
+			</youTubeSettings>
+			
+			<media>
+				
+				<!-- YOU TUBE EXAMPLE -->
+				<!-- isYouTube = Whether the item is a youtube video or mp3 song, true/false -->
+				
+				<item isYouTube="false">
+				
+					<!-- The tool tip text -->
+					<toolTip>Dream On - Café del Mar</toolTip>
+					
+					<!-- The ID of the YouTube video -->
+					<url></url>
+					
+				</item>
+				
+				
+				
+			</media>
+		
+		</music>
+		
+		<social>
+			
+			<!-- The total width of the icon (this value is used for social icon spacing) -->
+			<icon width="16">
+			
+				<!-- The tooltip text -->
+				<toolTip></toolTip>
+				
+				<!-- The url of the social icon -->
+				<image></image>
+				
+				<!-- The click destination for the icon -->
+				<url></url>
+				
+				<!-- The window target for an icon click -->
+				<target>_blank</target>
+				
+			</icon>
+			
+			<icon width="16">
+				<toolTip>GOOGLE MAP</toolTip>
+				<image>images/social/google.png</image>
+				<url>http://maps.google.com/maps/ms?ie=UTF8&hl=el&msa=0&msid=214597027404204495097.00049c539a4dfb92e2e2a&ll=37.448015,25.332799&spn=0.009233,0.01929&z=16</url>
+				<target>_blank</target>
+			</icon>
+			
+			<icon width="16">
+				<toolTip>WEBSITE DESIGN</toolTip>
+				<image>images/social/mixx.png</image>
+				<url>http://www.design-clinic.org</url>
+				<target>_blank</target>
+			</icon>
+		
+		</social>
+	
+	</footer>
+	
+</data>

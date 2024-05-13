@@ -1,0 +1,545 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- #BeginTemplate "/Templates/template.dwt" --><!-- DW6 -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Location Philippi Hotel - </title>
+<meta name="description" content="Philippi Hotel - Location ">
+<meta name="keywords" content="Location Philippi Hotel ,  Location, Philippi Hotel location">
+<meta http-equiv="content-language" content="en, el">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="cache-control" content="no-cache">
+<meta name="classification" content="Travel:Accommodation">
+<meta name="distribution" content="global">
+<meta name="rating" content="general">
+<meta name="robots" content="index,follow">
+<meta name="copyright" content="Copyright Marinet, All rights reserved.">
+<link rel="stylesheet" href="/styles.css" type="text/css">
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300|Open+Sans+Condensed:300&amp;subset=latin,cyrillic-ext,greek-ext,greek,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Open+Sans+Condensed:300&subset=latin,greek-ext,greek' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="/sf/jquery.min.js"></script>
+<script type="text/javascript" src="/sf/dropdown.js"></script>
+<script type="text/javascript" src="/sf/jquery-1.5.2.min.js"></script>
+<script type="text/javascript" src="/sf/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/sf/jquery-ui-1.8.13.custom.min.js"></script>
+<link type="text/css" rel="stylesheet" href="/sf/calendar/smoothness/jquery-ui-1.8.13.custom.css">
+<link type="text/css" rel="stylesheet" href="/sf/scroll/jquery.jscrollpane.css" media="all">
+<script type="text/javascript" src="/sf/scroll/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="/sf/scroll/jquery.jscrollpane.min.js"></script>
+<script type="text/javascript" src="/sf/highslide/highslide-with-gallery.js"></script>
+<link type="text/css" rel="stylesheet" href="/sf/highslide/highslide.css">
+<script type="text/javascript" src="https://cosmores.com/track.js"></script>
+<script type="text/javascript">
+
+ function onSelectCheckIn(selectedDate){
+    var date = jQuery.datepicker.parseDate(
+        jQuery(this).data("datepicker").settings.dateFormat ||
+            jQuery.datepicker._defaults.dateFormat,
+            selectedDate, jQuery(this).data("datepicker").settings
+    );
+    date = new Date(date.getFullYear(),date.getMonth(),date.getDate()+1);
+    //document.title = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate();
+    var maxdate = new Date(date.getFullYear(),date.getMonth(),date.getDate()+30);
+    jQuery("#CHECK_OUT_DATE").datepicker("option","minDate",date);
+    jQuery("#CHECK_OUT_DATE").datepicker("option","maxDate",maxdate);
+    var cyear = date.getFullYear();
+    var cmonth = date.getMonth()+1;
+    var cday = date.getDate();
+    if(cmonth<10){
+        cmonth = "0"+cmonth;
+    }
+    if(cday<10){
+        cday = "0"+cday;
+    }
+    setTimeout(function(){document.getElementById("CHECK_OUT_DATE").value=cday+"-"+cmonth+"-"+cyear;},250);
+    //document.title = year+"-"+month+"-"+day;
+}
+
+ jQuery(document).ready(function(){
+     var d = new Date();
+     var curr_year = d.getFullYear();
+     var curr_month = d.getMonth();
+     var curr_day = d.getDate();
+     jQuery("#CHECK_IN_DATE").datepicker({
+            onSelect:onSelectCheckIn,
+            showOtherMonths: true,
+            selectOtherMonths: true,
+            numberOfMonths: 1,
+            minDate: new Date(curr_year, curr_month, curr_day),
+            dateFormat: 'dd-mm-yy'
+        });
+
+     jQuery("#CHECK_OUT_DATE").datepicker({
+        showOtherMonths: true,
+        selectOtherMonths: true,
+        numberOfMonths: 1,
+        minDate: new Date(curr_year, curr_month, curr_day+1),
+        dateFormat: 'dd-mm-yy',
+    })
+
+
+ddmegamenu.docinit({
+  menuid:"navimenu",
+  easing:"easeInOutCirc",
+  dur: 200
+ })
+
+$('#pane1').jScrollPane({scrollbarWidth:10, scrollbarMargin:10 , showArrows:true, autoReinitialise: true, autoReinitialiseDelay: 500});
+
+var settings = {
+showArrows: true,
+autoReinitialise: true
+};
+var pane = $('.scroll-pane')
+pane.jScrollPane(settings);
+
+
+<!--OPEN CLOSE -->
+$("#sslide").toggle(function() {
+$("#maincontainer").animate({right:"-460px"}, 1000);
+$("#showhide").attr({
+src: "/images/show.png",
+title: "show",
+alt: "show"
+});
+},function() {
+$("#maincontainer").animate({right:"0px"}, 1000);
+$("#showhide").attr({
+src: "/images/hide.png",
+title: "hide",
+alt: "hide"
+});
+});
+
+<!--dropdown Menu-->
+
+
+$("#sslide2").toggle(function() {
+$("#container2").slideToggle(0);
+$("#showhide2").attr({
+src: "/images/arrowdown.png",
+title: "hide",
+alt: "hide"
+});
+},function() {
+$("#container2").slideToggle(0);
+$("#showhide2").attr({
+src: "/images/arrowup.png",
+title: "show",
+alt: "show"
+});
+});
+
+
+$("#slideextra1").toggle(function() {
+$("#containerextra1").animate({right:"-450px"}, 1300);
+},function() {
+$("#containerextra1").animate({right:"0px"}, 1300);
+});
+
+$("#slideextra2").toggle(function() {
+$("#containerextra2").show("fade", { }, 1000);
+$("#slideextra2").attr({
+});
+},function() {
+$("#containerextra2").hide("fade", { }, 1000);
+$("#slideextra2").attr({
+});
+});
+
+<!--HIGHSLIDE -->
+	hs.graphicsDir = '/sf/highslide/graphics/';
+	hs.align = 'center';
+	hs.transitions = ['expand', 'crossfade'];
+	hs.wrapperClassName = 'dark borderless floating-caption';
+	hs.fadeInOut = true;
+	hs.dimmingOpacity = .90;
+
+	// Add the controlbar
+	if (hs.addSlideshow) hs.addSlideshow({
+		//slideshowGroup: 'group1',
+		interval: 5000,
+		repeat: false,
+		useControls: true,
+		fixedControls: 'fit',
+		overlayOptions: {
+			opacity: .6,
+			position: 'bottom center',
+			hideOnMouseOut: true
+		}
+	});
+
+<!--TOGGLE -->
+$(".toggle-container").hide();
+$("div.trigger").toggle(function(){
+		$(this).addClass("active");
+		}, function () {
+		$(this).removeClass("active");
+});
+$("div.trigger").click(function(){
+		$(this).next(".toggle-container").slideToggle("slow,");
+});
+
+});
+
+
+<!--VALIDATE FORMS -->
+function MM_validateForm() { //v4.0
+  if (document.getElementById){
+    var i,p,q,nm,test,num,min,max,errors='',args=MM_validateForm.arguments;
+    for (i=0; i<(args.length-2); i+=3) { test=args[i+2]; val=document.getElementById(args[i]);
+      if (val) { nm=val.name; if ((val=val.value)!="") {
+        if (test.indexOf('isEmail')!=-1) { p=val.indexOf('@');
+          if (p<1 || p==(val.length-1)) errors+='- '+nm+' must contain an e-mail address.\n';
+        } else if (test!='R') { num = parseFloat(val);
+          if (isNaN(val)) errors+='- '+nm+' must contain a number.\n';
+          if (test.indexOf('inRange') != -1) { p=test.indexOf(':');
+            min=test.substring(8,p); max=test.substring(p+1);
+            if (num<min || max<num) errors+='- '+nm+' must contain a number between '+min+' and '+max+'.\n';
+      } } } else if (test.charAt(0) == 'R') errors += '- '+nm+' is required.\n'; }
+    } if (errors) alert('The following error(s) occurred:\n'+errors);
+    document.MM_returnValue = (errors == '');
+} }
+
+
+</script>
+
+<!--TRACK ME -->
+<!--PANORAMA -->
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+	//select all the a tag with name equal to modal
+	$('a[name=modal]').click(function(e) {
+		//Cancel the link behavior
+		e.preventDefault();
+
+		//Get the A tag
+		var id = $(this).attr('href');
+
+		//Get the screen height and width
+		var maskHeight = $(document).height();
+		var maskWidth = $(window).width();
+
+		//Set heigth and width to mask to fill up the whole screen
+		$('#mask').css({'width':maskWidth,'height':maskHeight});
+
+		//transition effect
+		$('#mask').fadeIn(1000);
+		$('#mask').fadeTo("slow",0.8);
+
+		//Get the window height and width
+		var winH = $(window).height();
+		var winW = $(window).width();
+
+		//Set the popup window to center
+		$(id).css('top',  winH/2-$(id).height()/2);
+		$(id).css('left', winW/2-$(id).width()/2);
+
+		//transition effect
+		$(id).fadeIn(2000);
+
+
+	});
+
+	//if close button is clicked
+	$('.window .close').click(function (e) {
+		//Cancel the link behavior
+		e.preventDefault();
+
+		$('#mask').hide();
+		$('.window').hide();
+	});
+
+	//if mask is clicked
+	$('#mask').click(function () {
+		$(this).hide();
+		$('.window').hide();
+	});
+
+});
+
+</script>
+
+<!--SLIDESHOW -->
+
+
+
+<!--GALLERY -->
+</head>
+<body style="background-color:#FFFFFF;">
+<div  style="position:absolute; top:0px; bottom:0px; left:0px; right:0px; width:auto; height:auto; margin:auto;">
+
+</div>
+<div>
+
+</div>
+<div style="position:absolute; top:0px; left:0px; width:260px;; height:100%; z-index:15;background:#1b629a;">
+
+
+<!--BEGIN LOGO-->
+<div style="position:absolute; top:15px; left:15px; z-index:20;">
+<a href="."><img src="/images/logo.png" alt="Philippi Hotel"></a>
+</div>
+<!--END LOGO-->
+
+<!--BEGIN MENU-->
+
+   <div id="sslide2" class="text1" style="cursor:pointer;position: absolute;top: 117px;left: 14px;">
+  <img src="/images/arrowup.png" id="showhide2" alt="">
+  </div>
+  <div id="container2" >
+<div class="container" style="top:101px;left:0;">
+  <div class="overlay1"></div>
+  <div class="content">
+    <div style="position:absolute; top:45px; left:0px; width:100%;  z-index:15;background: #2977b0; */">
+  <ul id="navimenu" class="dropdownmenu" >
+
+<!--home -->
+<li> <a href="." class="navigation"><img src="/images/home.png"></a></a>  </li>
+
+<li> <a href="location" class="navactive"><img src="/images/location.png"></a>  </li>
+
+<li> <a href="accommodation.php" class="navigation"><img src="/images/room.png"></a>  </li>
+
+<li> <a href="facilities" class="navigation"><img src="/images/facilities.png"></a>  </li>
+
+<li> <a href="gallery.php" class="navigation"><img src="/images/gallery.png"/></a>  </li>
+
+<li> <a href="links" class="navigation"><img src="/images/links.png"/></a>  </li>
+
+<li> <a href="offers" class="navigation"><img src="/images/specialoffers.png"/></a>  </li>
+
+<li> <a href="garden" class="navigation"><img src="/images/garden.png"/></a>  </li>
+<li> <a href="lounge" class="navigation"><img src="/images/lounge.png"/></a>  </li>
+
+<!--info1
+
+
+<li>
+                <a href="location" class="navactive">Location</a>
+        </li>
+
+
+       -->
+<!--end info1 -->
+
+<!--accommodation
+<li>
+<a href="accommodation.php" rel="menu1r" class="navigation"><img src="/images/room.png"></a>
+
+<div id="menu1r" class="menu dropdownbox">
+<div class="divlinks"><a href="rooms.1" class="navilinks">Economy Room</a> </div>
+<div class="divlinks"><a href="rooms.2" class="navilinks">Twin/Double Room</a> </div>
+
+ </div>
+</li>-->
+<!--end accommodation -->
+
+<!--info
+
+
+<li>
+                <a href="facilities" class="navigation">Facilities</a>
+        </li>
+
+
+
+
+<li>
+                <a href="offers" class="navigation">Offers</a>
+        </li>
+
+
+
+
+<li>
+                <a href="links" class="navigation">Links</a>
+        </li>
+
+
+
+
+<li>
+                <a href="garden" class="navigation">GARDEN </a>
+        </li>
+
+
+
+
+<li>
+                <a href="lounge" class="navigation">LOUNGE-TERRACE</a>
+        </li>
+
+
+       -->
+<!--end info
+
+<li><a href="gallery.php" class="navigation">Photo gallery</a>  </li>
+
+
+
+
+
+<li><a href="#" class="navigation">Online booking</a>  </li>
+
+<li><a href="contact.php" class="navigation">Contact</a> </li>
+   -->
+</ul>    </div>
+    <div style="clear:both"></div>
+  </div>
+</div>
+<!--END MENU-->
+  </div>
+
+ <!--LANGUAGES-->
+ <div style="position:absolute; top:119px; left:207px;">
+ <a href="/location"><img src="/images/en.png" alt=""></a>
+<a href="/el/location"><img src="/images/el.png" alt=""></a>
+ </div>
+
+
+ <!--BOOKING FORM-->
+  <div style="position:absolute; bottom:12px; left:0; width:100%;  z-index:15;">
+    <a href="#"> <img style=""src="/images/booknow.png"></a>
+    <div style="padding:0; margin:0;margin-left: 11px;">
+  <table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><input type="text" name="CHECK_IN_DATE" id="CHECK_IN_DATE" class="forms1" value="check in date" onFocus="if(this.value=='check in date')this.value='';">
+    </td>
+  <td>
+    <input type="text" name="CHECK_OUT_DATE" id="CHECK_OUT_DATE" class="forms1" value="check out date" onFocus="if(this.value=='check out date')this.value='';">
+  </td> </tr> <tr>
+   <td style="float: right;">
+     <select name="PERSONS" id="PERSONS" class="forms1">
+
+       <option value="1">1</option>
+       <option value="2" selected>2</option>
+       <option value="3">3</option>
+       <option value="4">4</option>
+       <option value="5">5</option>
+       <option value="6">6</option>
+       </select>
+   </td>
+    <td>
+  <input type="hidden" name="SITE" value="1163">
+  <input  name="cookieVal" value=""  id="cookieVal" type="hidden">
+  <input  name="sc" value=""  id="sc" type="hidden">
+  <input style="margin-left:3px;margin-top: 2px;"name="submitbooking" value="submit" type="image" src="/images/button1.png" alt="Online booking">
+    </td>
+  </tr>
+</table>
+  </div>
+  </div>
+</div>
+<div style="position:absolute; top:0px; left:260px; width: 100%; height:100%; z-index:1;background:#1b629a;">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12670.757941368398!2d25.3226639!3d37.4444396!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a2bfa9834fde67%3A0xb44ce221026e7c6e!2sHotel%20Philippi!5e0!3m2!1sen!2s!4v1715573027562!5m2!1sen!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+<div id="slidecaption"></div>
+
+
+  <!--SOCIALS-->
+  <div style="position:absolute; top:15px; right:0px;padding-right:32px;background: url(/images/bgsocial.png) repeat;">
+   <img style="padding-right: 5px;"src="/images/stay.png">
+  <a href="http://www.tripadvisor.com.gr/Hotel_Review-g662620-d310650-Reviews-Philippi_Hotel-Mykonos_Town_Mykonos_Cyclades.html" target="_blank"><img src="/images/tripadvisor.png" alt="tripadvisor"></a>
+   <a href="https://www.facebook.com/PhilippiHotel" target="_blank"><img src="/images/facebook.png" alt="facebook"></a>
+   <a href="https://www.youtube.com/watch?v=Hb2jzXgHUkg" target="_blank"><img src="/images/youtube.png" alt="youtube"></a>
+   <a href="https://twitter.com/PhilippiHotel" target="_blank"><img src="/images/twitter.png" alt="twitter"></a>
+
+ </div>
+
+ <!--CONTANT-->
+ <div style="position:absolute; top:21px; right:5px;">
+<a href="contact.php"><img src="/images/tel.png" alt="contact"></a>
+ </div>
+
+
+
+
+
+<!--FOOTER-->
+
+
+
+
+
+
+ <!--COPYRIGHT-->
+<div style="position:absolute;bottom:7px;right:10px;"><a href="http://www.marinet.gr" target="_blank" class="linkf">Web design & Seo by Marinet Ltd</a></div>
+
+<div style="clear:both"></div>
+
+
+
+<!--ADDRESS
+<div class="container">
+  <div class="overlay"></div>
+  <div class="content">
+<div style="float:right; margin-right:5px; padding:5px;" class="text1">
+MYKONOS TOWN 84600<br />25 str Kalogera<br />Cyclades Islands, GREECE<br />PHONE: +302289022294<br />FAX: +302289024680<br />
+E-mail: <a href="mailto:info@philippihotel.com?subject=Hotel">info@philippihotel.com</a>
+  </div>
+  <div style="clear:both"></div>
+  </div>
+</div>-->
+
+<!-- PANORAMICS
+
+   -->
+
+<div id="maincontainer" style="position:absolute; right:0px; top:66px; width:460px; height:240px; z-index:1">
+<div id="sslide" style="position:absolute; top:20px; left:-27px; z-index:30">
+<img src="/images/hide.png" alt="show/hide" id="showhide" style="cursor:pointer;">
+</div>
+
+
+<!-- CONTENT CONTAINER -->
+<div id="container" class="container" style="position:absolute; left:0; top:0; width:460px; height:240px; z-index:10;">
+  <div class="overlay"></div>
+  <div class="content">
+
+  <div style="position:absolute; top:0px; right:20px;">
+  <h1><!-- #BeginEditable "pages" -->Location<!-- #EndEditable --></h1>
+  </div>
+
+ <div style="padding:20px; padding-top:55px;">
+
+<div id="pane1" class="scroll-pane text" style="height:165px; padding-right:10px;">
+      <!-- #BeginEditable "content" -->
+
+<div style="margin-bottom:10px">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td valign="top">
+<div>
+
+              <div class="titles">  </div>
+              <div style="padding-bottom:10px"><strong>Mykonos the jewel of the Aegean Sea </strong><br />To all who wish to experience the magic of this island, this site offers a lot of information for the travellers. Mykonos is a grand example of unique Cycladic architecture. <br />When someone arrives in the beautiful island of the Aegean Sea, the windmills, the small churches and the beautiful locations offer the traveller a unique experience The people in Mykonos are very friendly and hospitable and guide the travellers in many places in the island. <br />That’s why Mykonos is the “jewel of the Aegean Sea. Over the years Mykonos became a strong tourism industry with thousands of visitors every year. In the island the visitors can see many taverns and nice hotels with great view to the sea Also for the travellers who are looking for adventure, the island’s natural beauty offers them unique experience which they cannot find in any other island. <br /><br /> <strong>History of Mykonos </strong><br />Mykonos the jewel of the Aegean sea is a beautiful island in Cyclades which attracts many travellers every year. <br />According to ancient Greek mythology, Hercules and Poseidon destroyed the Titans enemies of Zeus. The island got its name from the grandson of Apollo Mykon. In ancient times, Mykonos and Delos an island near Mykonos became very important islands as a supply island. When the island of Delos begun to develop as a sacred center, in Mykonos appeared effects of different people like the Phoenicians, Macedonians and Athenians who controlled the area for many years until the appearance of Alexander the Great.<br /> In his reign Mykonos became a commercial centre for agriculture and trade. Due to its geographical position, the future of the island continued to bloom and during the reign of Augustus Caesar and the Romans, the island has acquired great wealth. During the Middle Ages Mykonos was under the sovereignty of the Venetians. At that time, slavery was common and thousands of islanders were slaves. <br />The Greek war for independence which ended with the liberation from the Turks in 1830 highlighted the heroine Manto Mavrogenous which came from Mykonos and defeated the Turks in the 1822 attack. Since ancient times the Cyclades became popular as a natural terrain suitable for piracy. The island of Mykonos has acquired great influence which lasted up until the early 19th century. During the Second World War Mykonos suffered greatly from hunger. It took until the mid-50s for tourism to grow once again.. <br />Due to its unique architecture and hospitality on the island Mykonos soon became a haven for the rich and famous.</div>
+
+
+</div>
+                  </td>
+                <td valign="top" align="right">
+                                  </td>
+              </tr>
+            </table>
+
+
+<div style="clear:both"></div>
+
+
+</div>
+
+
+                      <!-- #EndEditable -->
+</div>
+</div>
+
+  </div>
+</div>
+<!--END CONTAINER -->
+</div>
+
+</body>
+<!-- #EndTemplate --></html>

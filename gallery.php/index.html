@@ -1,0 +1,399 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- #BeginTemplate "/Templates/template.dwt" --><!-- DW6 -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Photo gallery Philippi Hotel - </title>
+<meta name="description" content="Philippi Hotel Photo gallery -  ">
+<meta name="keywords" content="Photo gallery Philippi Hotel , ">
+<meta http-equiv="content-language" content="en, el">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="cache-control" content="no-cache">
+<meta name="classification" content="Travel:Accommodation">
+<meta name="distribution" content="global">
+<meta name="rating" content="general">
+<meta name="robots" content="index,follow">
+<meta name="copyright" content="Copyright Marinet, All rights reserved.">
+<link rel="stylesheet" href="/styles.css" type="text/css">
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300|Open+Sans+Condensed:300&amp;subset=latin,cyrillic-ext,greek-ext,greek,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Open+Sans+Condensed:300&subset=latin,greek-ext,greek' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="/sf/jquery.min.js"></script>
+<script type="text/javascript" src="/sf/dropdown.js"></script>
+<script type="text/javascript" src="/sf/jquery-1.5.2.min.js"></script>
+<script type="text/javascript" src="/sf/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/sf/jquery-ui-1.8.13.custom.min.js"></script>
+<link type="text/css" rel="stylesheet" href="/sf/calendar/smoothness/jquery-ui-1.8.13.custom.css">
+<link type="text/css" rel="stylesheet" href="/sf/scroll/jquery.jscrollpane.css" media="all">
+<script type="text/javascript" src="/sf/scroll/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="/sf/scroll/jquery.jscrollpane.min.js"></script>
+<script type="text/javascript" src="/sf/highslide/highslide-with-gallery.js"></script>
+<link type="text/css" rel="stylesheet" href="/sf/highslide/highslide.css">
+<script type="text/javascript" src="https://cosmores.com/track.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+
+<!--CALENDAR -->
+	});
+
+ function onSelectCheckIn(selectedDate){
+    var date = jQuery.datepicker.parseDate(
+        jQuery(this).data("datepicker").settings.dateFormat ||
+            jQuery.datepicker._defaults.dateFormat,
+            selectedDate, jQuery(this).data("datepicker").settings
+    );
+    date = new Date(date.getFullYear(),date.getMonth(),date.getDate()+1);
+    //document.title = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate();
+    var maxdate = new Date(date.getFullYear(),date.getMonth(),date.getDate()+30);
+    jQuery("#CHECK_OUT_DATE").datepicker("option","minDate",date);
+    jQuery("#CHECK_OUT_DATE").datepicker("option","maxDate",maxdate);
+    var cyear = date.getFullYear();
+    var cmonth = date.getMonth()+1;
+    var cday = date.getDate();
+    if(cmonth<10){
+        cmonth = "0"+cmonth;
+    }
+    if(cday<10){
+        cday = "0"+cday;
+    }
+    setTimeout(function(){document.getElementById("CHECK_OUT_DATE").value=cday+"-"+cmonth+"-"+cyear;},250);
+    //document.title = year+"-"+month+"-"+day;
+}
+
+ jQuery(document).ready(function(){
+     var d = new Date();
+     var curr_year = d.getFullYear();
+     var curr_month = d.getMonth();
+     var curr_day = d.getDate();
+
+
+
+
+ddmegamenu.docinit({
+  menuid:"navimenu",
+  easing:"easeInOutCirc",
+  dur: 200
+ })
+
+
+var settings = {
+showArrows: true,
+autoReinitialise: true
+};
+var pane = $('.scroll-pane')
+
+
+
+$("#sslide").toggle(function() {
+$("#maincontainer").animate({right:"-460px"}, 1000);
+$("#showhide").attr({
+src: "/images/show.png",
+title: "show",
+alt: "show"
+});
+},function() {
+$("#maincontainer").animate({right:"0px"}, 1000);
+$("#showhide").attr({
+src: "/images/hide.png",
+title: "hide",
+alt: "hide"
+});
+});
+
+<!--dropdown Menu-->
+
+
+$("#sslide2").toggle(function() {
+$("#container2").slideToggle(0);
+$("#showhide2").attr({
+src: "/images/arrowdown.png",
+title: "hide",
+alt: "hide"
+});
+},function() {
+$("#container2").slideToggle(0);
+$("#showhide2").attr({
+src: "/images/arrowup.png",
+title: "show",
+alt: "show"
+});
+});
+
+
+$("#slideextra1").toggle(function() {
+$("#containerextra1").animate({right:"-450px"}, 1300);
+},function() {
+$("#containerextra1").animate({right:"0px"}, 1300);
+});
+
+$("#slideextra2").toggle(function() {
+$("#containerextra2").show("fade", { }, 1000);
+$("#slideextra2").attr({
+});
+},function() {
+$("#containerextra2").hide("fade", { }, 1000);
+$("#slideextra2").attr({
+});
+});
+
+<!--HIGHSLIDE -->
+	hs.graphicsDir = '/sf/highslide/graphics/';
+	hs.align = 'center';
+	hs.transitions = ['expand', 'crossfade'];
+	hs.wrapperClassName = 'dark borderless floating-caption';
+	hs.fadeInOut = true;
+	hs.dimmingOpacity = .90;
+
+	// Add the controlbar
+	if (hs.addSlideshow) hs.addSlideshow({
+		//slideshowGroup: 'group1',
+		interval: 5000,
+		repeat: false,
+		useControls: true,
+		fixedControls: 'fit',
+		overlayOptions: {
+			opacity: .6,
+			position: 'bottom center',
+			hideOnMouseOut: true
+		}
+	});
+
+<!--TOGGLE -->
+$(".toggle-container").hide();
+$("div.trigger").toggle(function(){
+		$(this).addClass("active");
+		}, function () {
+		$(this).removeClass("active");
+});
+$("div.trigger").click(function(){
+		$(this).next(".toggle-container").slideToggle("slow,");
+});
+
+});
+
+
+<!--VALIDATE FORMS -->
+function MM_validateForm() { //v4.0
+  if (document.getElementById){
+    var i,p,q,nm,test,num,min,max,errors='',args=MM_validateForm.arguments;
+    for (i=0; i<(args.length-2); i+=3) { test=args[i+2]; val=document.getElementById(args[i]);
+      if (val) { nm=val.name; if ((val=val.value)!="") {
+        if (test.indexOf('isEmail')!=-1) { p=val.indexOf('@');
+          if (p<1 || p==(val.length-1)) errors+='- '+nm+' must contain an e-mail address.\n';
+        } else if (test!='R') { num = parseFloat(val);
+          if (isNaN(val)) errors+='- '+nm+' must contain a number.\n';
+          if (test.indexOf('inRange') != -1) { p=test.indexOf(':');
+            min=test.substring(8,p); max=test.substring(p+1);
+            if (num<min || max<num) errors+='- '+nm+' must contain a number between '+min+' and '+max+'.\n';
+      } } } else if (test.charAt(0) == 'R') errors += '- '+nm+' is required.\n'; }
+    } if (errors) alert('The following error(s) occurred:\n'+errors);
+    document.MM_returnValue = (errors == '');
+} }
+
+
+</script>
+
+<!--TRACK ME -->
+<!--PANORAMA -->
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+	//select all the a tag with name equal to modal
+	$('a[name=modal]').click(function(e) {
+		//Cancel the link behavior
+		e.preventDefault();
+
+		//Get the A tag
+		var id = $(this).attr('href');
+
+		//Get the screen height and width
+		var maskHeight = $(document).height();
+		var maskWidth = $(window).width();
+
+		//Set heigth and width to mask to fill up the whole screen
+		$('#mask').css({'width':maskWidth,'height':maskHeight});
+
+		//transition effect
+		$('#mask').fadeIn(1000);
+		$('#mask').fadeTo("slow",0.8);
+
+		//Get the window height and width
+		var winH = $(window).height();
+		var winW = $(window).width();
+
+		//Set the popup window to center
+		$(id).css('top',  winH/2-$(id).height()/2);
+		$(id).css('left', winW/2-$(id).width()/2);
+
+		//transition effect
+		$(id).fadeIn(2000);
+
+
+	});
+
+	//if close button is clicked
+	$('.window .close').click(function (e) {
+		//Cancel the link behavior
+		e.preventDefault();
+
+		$('#mask').hide();
+		$('.window').hide();
+	});
+
+	//if mask is clicked
+	$('#mask').click(function () {
+		$(this).hide();
+		$('.window').hide();
+	});
+
+});
+
+</script>
+
+<!--SLIDESHOW -->
+
+
+
+<!--GALLERY -->
+		<link rel="stylesheet" href="/sf/slideshow1/supersized.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="/sf/slideshow1/supersized.shutter.css" type="text/css" media="screen" />
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+		<script type="text/javascript" src="/sf/slideshow1/jquery.easing.min.js"></script>
+		<script type="text/javascript" src="/sf/slideshow1/supersized.3.2.7.min.js"></script>
+		<script type="text/javascript" src="/sf/slideshow1/supersized.shutter.min.js"></script>
+
+		<script type="text/javascript">
+
+			jQuery(function($){
+
+				$.supersized({
+
+					// Functionality
+					slideshow               :   1,			// Slideshow on/off
+					autoplay				:	1,			// Slideshow starts playing automatically
+					start_slide             :   1,			// Start slide (0 is random)
+					stop_loop				:	0,			// Pauses slideshow on last slide
+					random					: 	0,			// Randomize slide order (Ignores start slide)
+					slide_interval          :   3000,		// Length between transitions
+					transition              :   1, 			// 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
+					transition_speed		:	1000,		// Speed of transition
+					new_window				:	1,			// Image links open in new window/tab
+					pause_hover             :   0,			// Pause slideshow on hover
+					keyboard_nav            :   1,			// Keyboard navigation on/off
+					performance				:	1,			// 0-Normal, 1-Hybrid speed/quality, 2-Optimizes image quality, 3-Optimizes transition speed // (Only works for Firefox/IE, not Webkit)
+					image_protect			:	1,			// Disables image dragging and right click with Javascript
+
+					// Size & Position
+					min_width		        :   0,			// Min width allowed (in pixels)
+					min_height		        :   0,			// Min height allowed (in pixels)
+					vertical_center         :   1,			// Vertically center background
+					horizontal_center       :   1,			// Horizontally center background
+					fit_always				:	0,			// Image will never exceed browser width or height (Ignores min. dimensions)
+					fit_portrait         	:   1,			// Portrait images will not exceed browser height
+					fit_landscape			:   0,			// Landscape images will not exceed browser width
+
+					// Components
+					slide_links				:	'blank',	// Individual links for each slide (Options: false, 'num', 'name', 'blank')
+					thumb_links				:	1,			// Individual thumb links for each slide
+					thumbnail_navigation    :   0,			// Thumbnail navigation
+					slides 					:  	[				// Slideshow Images
+
+
+			{image : '/photos/1.webp', title : '', url : ''},
+
+			{image : '/photos/2.webp', title : '', url : ''},
+
+			{image : '/photos/3.webp', title : '', url : ''},
+
+			{image : '/photos/4.webp', title : '', url : ''},
+
+			{image : '/photos/5.webp', title : '', url : ''},
+
+			{image : '/photos/6.webp', title : '', url : ''},
+
+			{image : '/photos/7.webp', title : '', url : ''},
+
+			{image : '/photos/8.webp', title : '', url : ''},
+
+			{image : '/photos/9.webp', title : '', url : ''},
+
+			{image : '/photos/10.jpeg', title : '', url : ''},
+
+
+							]
+
+				});
+		    });
+
+		</script>
+
+</head>
+<body style="background-color:#FFFFFF;">
+<div id="supersized" style="position: fixed; top:0; left:0; width: 100%; height: 100%; border:0; margin:0; padding:0; z-index:0">
+<img src="/flash/gallery/1.jpg" width="100%" height="100%" alt="">
+</div>
+<!--ADDRESS
+<div class="container">
+  <div class="overlay"></div>
+  <div class="content">
+<div style="float:right; margin-right:5px; padding:5px;" class="text1">
+MYKONOS TOWN 84600<br />25 str Kalogera<br />Cyclades Islands, GREECE<br />PHONE: +302289022294<br />FAX: +302289024680<br />
+E-mail: <a href="mailto:info@philippihotel.com?subject=Hotel">info@philippihotel.com</a>
+  </div>
+  <div style="clear:both"></div>
+  </div>
+</div>-->
+
+<!-- PANORAMICS
+
+   -->
+<!--BEGIN LOGO-->
+<div style="position:absolute; top:15px; left:15px; z-index:20;">
+<a href="."><img src="/images/logo2.png" alt="Philippi Hotel"></a>
+</div>
+<!--END LOGO-->
+<div style="position:absolute; top:10px; right:10px; z-index:20;"> <a href="javascript:history.go(-1);"><img src="/images/back.png" alt="back"></a></div>
+
+	<!--Thumbnail Navigation-->
+	<div id="prevthumb"></div>
+	<div id="nextthumb"></div>
+
+	<!--Arrow Navigation-->
+	<a id="prevslide" class="load-item"></a>
+	<a id="nextslide" class="load-item"></a>
+
+	<div id="thumb-tray" class="load-item">
+		<div id="thumb-back"></div>
+		<div id="thumb-forward"></div>
+	</div>
+
+	<!--Time Bar-->
+	<div id="progress-back" class="load-item">
+		<div id="progress-bar"></div>
+	</div>
+
+	<!--Control Bar-->
+	<div id="controls-wrapper" class="load-item">
+		<div id="controls">
+
+			<a id="play-button"><img id="pauseplay" src="/sf/slideshow1/img/pause.png"/></a>
+
+			<!--Slide counter-->
+			<div id="slidecounter">
+				<span class="slidenumber"></span> / <span class="totalslides"></span>
+			</div>
+
+			<!--Slide captions displayed here-->
+			<div id="slidecaption"></div>
+
+			<!--Thumb Tray button-->
+			<a id="tray-button"><img id="tray-arrow" src="/sf/slideshow1/img/button-tray-up.png"/></a>
+
+			<!--Navigation-->
+			<ul id="slide-list"></ul>
+
+		</div>
+	</div>
+
+</body>
+<!-- #EndTemplate --></html>

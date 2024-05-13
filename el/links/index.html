@@ -1,0 +1,594 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- #BeginTemplate "/Templates/template.dwt" --><!-- DW6 -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Links Philippi Hotel - </title>
+<meta name="description" content="Philippi Hotel - Links ">
+<meta name="keywords" content="Links Philippi Hotel ,  Links, Philippi Hotel links">
+<meta http-equiv="content-language" content="en, el">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="cache-control" content="no-cache">
+<meta name="classification" content="Travel:Accommodation">
+<meta name="distribution" content="global">
+<meta name="rating" content="general">
+<meta name="robots" content="index,follow">
+<meta name="copyright" content="Copyright Marinet, All rights reserved.">
+<link rel="stylesheet" href="/styles.css" type="text/css">
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300|Open+Sans+Condensed:300&amp;subset=latin,cyrillic-ext,greek-ext,greek,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Open+Sans+Condensed:300&subset=latin,greek-ext,greek' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="/sf/jquery.min.js"></script>
+<script type="text/javascript" src="/sf/dropdown.js"></script>
+<script type="text/javascript" src="/sf/jquery-1.5.2.min.js"></script>
+<script type="text/javascript" src="/sf/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/sf/jquery-ui-1.8.13.custom.min.js"></script>
+<link type="text/css" rel="stylesheet" href="/sf/calendar/smoothness/jquery-ui-1.8.13.custom.css">
+<link type="text/css" rel="stylesheet" href="/sf/scroll/jquery.jscrollpane.css" media="all">
+<script type="text/javascript" src="/sf/scroll/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="/sf/scroll/jquery.jscrollpane.min.js"></script>
+<script type="text/javascript" src="/sf/highslide/highslide-with-gallery.js"></script>
+<link type="text/css" rel="stylesheet" href="/sf/highslide/highslide.css">
+<script type="text/javascript" src="https://cosmores.com/track.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+
+<!--CALENDAR -->
+	$( "#arrivaldate" ).datepicker({ dateFormat: 'dd-mm-yy' });
+	$( "#departuredate" ).datepicker({ dateFormat: 'dd-mm-yy' });
+	});
+
+ function onSelectCheckIn(selectedDate){
+    var date = jQuery.datepicker.parseDate(
+        jQuery(this).data("datepicker").settings.dateFormat ||
+            jQuery.datepicker._defaults.dateFormat,
+            selectedDate, jQuery(this).data("datepicker").settings
+    );
+    date = new Date(date.getFullYear(),date.getMonth(),date.getDate()+1);
+    //document.title = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate();
+    var maxdate = new Date(date.getFullYear(),date.getMonth(),date.getDate()+30);
+    jQuery("#CHECK_OUT_DATE").datepicker("option","minDate",date);
+    jQuery("#CHECK_OUT_DATE").datepicker("option","maxDate",maxdate);
+    var cyear = date.getFullYear();
+    var cmonth = date.getMonth()+1;
+    var cday = date.getDate();
+    if(cmonth<10){
+        cmonth = "0"+cmonth;
+    }
+    if(cday<10){
+        cday = "0"+cday;
+    }
+    setTimeout(function(){document.getElementById("CHECK_OUT_DATE").value=cday+"-"+cmonth+"-"+cyear;},250);
+    //document.title = year+"-"+month+"-"+day;
+}
+
+ jQuery(document).ready(function(){
+     var d = new Date();
+     var curr_year = d.getFullYear();
+     var curr_month = d.getMonth();
+     var curr_day = d.getDate();
+     jQuery("#CHECK_IN_DATE").datepicker({
+            onSelect:onSelectCheckIn,
+            showOtherMonths: true,
+            selectOtherMonths: true,
+            numberOfMonths: 1,
+            minDate: new Date(curr_year, curr_month, curr_day),
+            dateFormat: 'dd-mm-yy'
+        });
+
+     jQuery("#CHECK_OUT_DATE").datepicker({
+        showOtherMonths: true,
+        selectOtherMonths: true,
+        numberOfMonths: 1,
+        minDate: new Date(curr_year, curr_month, curr_day+1),
+        dateFormat: 'dd-mm-yy',
+    })
+
+
+<!--DROPDOWN -->
+ddmegamenu.docinit({
+  menuid:"navimenu",
+  easing:"easeInOutCirc",
+  dur: 200
+ })
+
+<!--SCROLL -->
+$('#pane1').jScrollPane({scrollbarWidth:10, scrollbarMargin:10 , showArrows:true, autoReinitialise: true, autoReinitialiseDelay: 500});
+
+var settings = {
+showArrows: true,
+autoReinitialise: true
+};
+var pane = $('.scroll-pane')
+pane.jScrollPane(settings);
+
+
+<!--OPEN CLOSE -->
+$("#sslide").toggle(function() {
+$("#maincontainer").animate({right:"-460px"}, 1000);
+$("#showhide").attr({
+src: "/images/show.png",
+title: "show",
+alt: "show"
+});
+},function() {
+$("#maincontainer").animate({right:"0px"}, 1000);
+$("#showhide").attr({
+src: "/images/hide.png",
+title: "hide",
+alt: "hide"
+});
+});
+
+<!--dropdown Menu-->
+
+
+$("#sslide2").toggle(function() {
+$("#container2").slideToggle(0);
+$("#showhide2").attr({
+src: "/images/arrowdown.png",
+title: "hide",
+alt: "hide"
+});
+},function() {
+$("#container2").slideToggle(0);
+$("#showhide2").attr({
+src: "/images/arrowup.png",
+title: "show",
+alt: "show"
+});
+});
+
+
+<!-- EXTRAS
+$("#slideextra1").toggle(function() {
+$("#containerextra1").animate({right:"-450px"}, 1300);
+},function() {
+$("#containerextra1").animate({right:"0px"}, 1300);
+});
+
+$("#slideextra2").toggle(function() {
+$("#containerextra2").show("fade", { }, 1000);
+$("#slideextra2").attr({
+});
+},function() {
+$("#containerextra2").hide("fade", { }, 1000);
+$("#slideextra2").attr({
+});
+});
+
+<!--HIGHSLIDE -->
+	hs.graphicsDir = '/sf/highslide/graphics/';
+	hs.align = 'center';
+	hs.transitions = ['expand', 'crossfade'];
+	hs.wrapperClassName = 'dark borderless floating-caption';
+	hs.fadeInOut = true;
+	hs.dimmingOpacity = .90;
+
+	// Add the controlbar
+	if (hs.addSlideshow) hs.addSlideshow({
+		//slideshowGroup: 'group1',
+		interval: 5000,
+		repeat: false,
+		useControls: true,
+		fixedControls: 'fit',
+		overlayOptions: {
+			opacity: .6,
+			position: 'bottom center',
+			hideOnMouseOut: true
+		}
+	});
+
+<!--TOGGLE -->
+$(".toggle-container").hide();
+$("div.trigger").toggle(function(){
+		$(this).addClass("active");
+		}, function () {
+		$(this).removeClass("active");
+});
+$("div.trigger").click(function(){
+		$(this).next(".toggle-container").slideToggle("slow,");
+});
+
+});
+
+
+<!--VALIDATE FORMS -->
+function MM_validateForm() { //v4.0
+  if (document.getElementById){
+    var i,p,q,nm,test,num,min,max,errors='',args=MM_validateForm.arguments;
+    for (i=0; i<(args.length-2); i+=3) { test=args[i+2]; val=document.getElementById(args[i]);
+      if (val) { nm=val.name; if ((val=val.value)!="") {
+        if (test.indexOf('isEmail')!=-1) { p=val.indexOf('@');
+          if (p<1 || p==(val.length-1)) errors+='- '+nm+' must contain an e-mail address.\n';
+        } else if (test!='R') { num = parseFloat(val);
+          if (isNaN(val)) errors+='- '+nm+' must contain a number.\n';
+          if (test.indexOf('inRange') != -1) { p=test.indexOf(':');
+            min=test.substring(8,p); max=test.substring(p+1);
+            if (num<min || max<num) errors+='- '+nm+' must contain a number between '+min+' and '+max+'.\n';
+      } } } else if (test.charAt(0) == 'R') errors += '- '+nm+' is required.\n'; }
+    } if (errors) alert('The following error(s) occurred:\n'+errors);
+    document.MM_returnValue = (errors == '');
+} }
+
+
+</script>
+
+<!--TRACK ME -->
+<!--PANORAMA -->
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+	//select all the a tag with name equal to modal
+	$('a[name=modal]').click(function(e) {
+		//Cancel the link behavior
+		e.preventDefault();
+
+		//Get the A tag
+		var id = $(this).attr('href');
+
+		//Get the screen height and width
+		var maskHeight = $(document).height();
+		var maskWidth = $(window).width();
+
+		//Set heigth and width to mask to fill up the whole screen
+		$('#mask').css({'width':maskWidth,'height':maskHeight});
+
+		//transition effect
+		$('#mask').fadeIn(1000);
+		$('#mask').fadeTo("slow",0.8);
+
+		//Get the window height and width
+		var winH = $(window).height();
+		var winW = $(window).width();
+
+		//Set the popup window to center
+		$(id).css('top',  winH/2-$(id).height()/2);
+		$(id).css('left', winW/2-$(id).width()/2);
+
+		//transition effect
+		$(id).fadeIn(2000);
+
+
+	});
+
+	//if close button is clicked
+	$('.window .close').click(function (e) {
+		//Cancel the link behavior
+		e.preventDefault();
+
+		$('#mask').hide();
+		$('.window').hide();
+	});
+
+	//if mask is clicked
+	$('#mask').click(function () {
+		$(this).hide();
+		$('.window').hide();
+	});
+
+});
+
+</script>
+
+<!--SLIDESHOW -->
+<link rel="stylesheet" href="/sf/slideshow/supersized.css" type="text/css" media="screen">
+<link rel="stylesheet" href="/sf/slideshow/supersized.shutter.css" type="text/css" media="screen">
+<script type="text/javascript" src="/sf/slideshow/jquery.easing.min.js"></script>
+<script type="text/javascript" src="/sf/slideshow/supersized.3.2.5.min.js"></script>
+<script type="text/javascript" src="/sf/slideshow/supersized.shutter.min.js"></script>
+
+		<script type="text/javascript">
+
+			jQuery(function($){
+
+				$.supersized({
+
+					// Functionality
+					slideshow               :   1,			// Slideshow on/off
+					autoplay				:	1,			// Slideshow starts playing automatically
+					start_slide             :   1,			// Start slide (0 is random)
+					stop_loop				:	0,			// Pauses slideshow on last slide
+					slide_interval          :   3000,		// Length between transitions
+					transition              :   1, 			// 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
+					transition_speed		:	700,		// Speed of transition
+
+					// Components
+					slide_links				:	'blank',	// Individual links for each slide (Options: false, 'num', 'name', 'blank')
+					slides 					:  	[			// Slideshow Images
+
+
+	{image : '/flash/info/6.jpg', title : '', url : ''}
+
+
+              ]
+				});
+		    });
+
+		</script>
+
+
+
+<!--GALLERY -->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46990698-43', 'auto');
+  ga('send', 'pageview');
+
+</script></head>
+<body style="background-color:#FFFFFF;">
+<div id="supersized" style="position: fixed; top:0; left:0; width: 100%; height: 100%; border:0; margin:0; padding:0; z-index:0">
+<img src="/flash/info/6.jpg" width="100%" height="100%" alt="">
+</div>
+
+<div style="position:absolute; top:0px; left:0px; width:260px;; height:100%; z-index:15;background:#1b629a;">
+
+
+<!--BEGIN LOGO-->
+<div style="position:absolute; top:15px; left:15px; z-index:20;">
+<a href="."><img src="/images/logo.png" alt="Philippi Hotel"></a>
+</div>
+<!--END LOGO-->
+
+<!--BEGIN MENU-->
+
+   <div id="sslide2" class="text1" style="cursor:pointer;position: absolute;top: 117px;left: 14px;">
+  <img src="/images/arrowup.png" id="showhide2" alt="">
+  </div>
+  <div id="container2" >
+<div class="container" style="top:101px;left:0;">
+  <div class="overlay1"></div>
+  <div class="content">
+    <div style="position:absolute; top:45px; left:0px; width:100%;  z-index:15;background: #2977b0; */">
+  <ul id="navimenu" class="dropdownmenu" >
+
+<!--home -->
+<li> <a href="." class="navigation"><img src="/images/homeel.png"></a></a>  </li>
+
+<li> <a href="location" class="navigation"><img src="/images/locationel.png"></a>  </li>
+
+<li> <a href="accommodation.php" class="navigation"><img src="/images/roomel.png"></a>  </li>
+
+<li> <a href="facilities" class="navigation"><img src="/images/facilitiesel.png"></a>  </li>
+
+<li> <a href="gallery.php" class="navigation"><img src="/images/gallery.png"/></a>  </li>
+
+<li> <a href="links" class="navactive"><img src="/images/links.png"/></a>  </li>
+
+<li> <a href="offers" class="navigation"><img src="/images/specialoffersel.png"/></a>  </li>
+
+<li> <a href="garden" class="navigation"><img src="/images/gardenel.png"/></a>  </li>
+<li> <a href="lounge" class="navigation"><img src="/images/loungeel.png"/></a>  </li>
+
+<!--info1
+
+
+<li>
+                <a href="location" class="navigation">Τοποθεσία</a>
+        </li>
+
+
+       -->
+<!--end info1 -->
+
+<!--accommodation
+<li>
+<a href="accommodation.php" rel="menu1r" class="navigation"><img src="/images/roomel.png"></a>
+
+<div id="menu1r" class="menu dropdownbox">
+<div class="divlinks"><a href="rooms.1" class="navilinks">Οικονομικό Δωμάτιο</a> </div>
+<div class="divlinks"><a href="rooms.2" class="navilinks">Δίκλινο Δωμάτιο</a> </div>
+
+ </div>
+</li>-->
+<!--end accommodation -->
+
+<!--info
+
+
+<li>
+                <a href="facilities" class="navigation">Παροχές</a>
+        </li>
+
+
+
+
+<li>
+                <a href="offers" class="navigation">Προσφορές</a>
+        </li>
+
+
+
+
+<li>
+                <a href="links" class="navactive">Links</a>
+        </li>
+
+
+
+
+<li>
+                <a href="garden" class="navigation">GARDEN </a>
+        </li>
+
+
+
+
+<li>
+                <a href="lounge" class="navigation">LOUNGE-TERRACE</a>
+        </li>
+
+
+       -->
+<!--end info
+
+<li><a href="gallery.php" class="navigation">Φωτογραφίες</a>  </li>
+
+
+
+
+
+<li><a href="#" class="navigation">Online booking</a>  </li>
+
+<li><a href="contact.php" class="navigation">Επικοινωνία</a> </li>
+   -->
+</ul>    </div>
+    <div style="clear:both"></div>
+  </div>
+</div>
+<!--END MENU-->
+  </div>
+
+ <!--LANGUAGES-->
+ <div style="position:absolute; top:119px; left:207px;">
+ <a href="/links"><img src="/images/en.png" alt=""></a>
+<a href="/el/links"><img src="/images/el.png" alt=""></a>
+ </div>
+
+
+ <!--BOOKING FORM-->
+  <div style="position:absolute; bottom:12px; left:0; width:100%;  z-index:15;">
+    <a href="#"> <img style=""src="/images/booknow.png"></a>
+    <form action="http://philippihotel.cosmores.com?SITE=1163" method="get" name="formbooking" style="padding:0; margin:0;margin-left: 11px;">
+  <table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><input type="text" name="CHECK_IN_DATE" id="CHECK_IN_DATE" class="forms1" value="check in date" onFocus="if(this.value=='check in date')this.value='';">
+    </td>
+  <td>
+    <input type="text" name="CHECK_OUT_DATE" id="CHECK_OUT_DATE" class="forms1" value="check out date" onFocus="if(this.value=='check out date')this.value='';">
+  </td> </tr> <tr>
+   <td style="float: right;">
+     <select name="PERSONS" id="PERSONS" class="forms1">
+
+       <option value="1">1</option>
+       <option value="2" selected>2</option>
+       <option value="3">3</option>
+       <option value="4">4</option>
+       <option value="5">5</option>
+       <option value="6">6</option>
+       </select>
+   </td>
+    <td>
+  <input type="hidden" name="SITE" value="1163">
+  <input  name="cookieVal" value=""  id="cookieVal" type="hidden">
+  <input  name="sc" value=""  id="sc" type="hidden">
+  <input style="margin-left:3px;margin-top: 2px;"name="submitbooking" value="submit" type="image" src="/images/button1.png" alt="Online booking">
+    </td>
+  </tr>
+</table>
+  </form>
+  </div>
+</div>
+
+<div id="slidecaption"></div>
+
+
+  <!--SOCIALS-->
+  <div style="position:absolute; top:15px; right:0px;padding-right:32px;background: url(/images/bgsocial.png) repeat;">
+   <img style="padding-right: 5px;"src="/images/stay.png">
+  <a href="http://www.tripadvisor.com.gr/Hotel_Review-g662620-d310650-Reviews-Philippi_Hotel-Mykonos_Town_Mykonos_Cyclades.html" target="_blank"><img src="/images/tripadvisor.png" alt="tripadvisor"></a>
+   <a href="https://www.facebook.com/PhilippiHotel" target="_blank"><img src="/images/facebook.png" alt="facebook"></a>
+   <a href="https://www.youtube.com/watch?v=Hb2jzXgHUkg" target="_blank"><img src="/images/youtube.png" alt="youtube"></a>
+   <a href="https://twitter.com/PhilippiHotel" target="_blank"><img src="/images/twitter.png" alt="twitter"></a>
+
+ </div>
+
+ <!--CONTANT-->
+ <div style="position:absolute; top:21px; right:5px;">
+<a href="contact.php"><img src="/images/tel.png" alt="contact"></a>
+ </div>
+
+
+
+
+
+<!--FOOTER-->
+
+
+
+
+
+
+ <!--COPYRIGHT-->
+<div style="position:absolute;bottom:7px;right:10px;"><a href="http://www.marinet.gr" target="_blank" class="linkf">Web design & Seo by Marinet Ltd</a></div>
+
+<div style="clear:both"></div>
+
+
+
+<!--ADDRESS
+<div class="container">
+  <div class="overlay"></div>
+  <div class="content">
+<div style="float:right; margin-right:5px; padding:5px;" class="text1">
+ΜΥΚΟΝΟΣ 84600<br />Καλογερα 25<br />Κυκλάδες<br />ΤΗΛ: +302289022294<br />FAX: +302289024680
+E-mail: <a href="mailto:info@philippihotel.com?subject=Hotel">info@philippihotel.com</a>
+  </div>
+  <div style="clear:both"></div>
+  </div>
+</div>-->
+
+<!-- PANORAMICS
+
+   -->
+
+<div id="maincontainer" style="position:absolute; right:0px; top:66px; width:460px; height:240px; z-index:1">
+<div id="sslide" style="position:absolute; top:20px; left:-27px; z-index:30">
+<img src="/images/hide.png" alt="show/hide" id="showhide" style="cursor:pointer;">
+</div>
+
+
+<!-- CONTENT CONTAINER -->
+<div id="container" class="container" style="position:absolute; left:0; top:0; width:460px; height:240px; z-index:10;">
+  <div class="overlay"></div>
+  <div class="content">
+
+  <div style="position:absolute; top:0px; right:20px;">
+  <h1><!-- #BeginEditable "pages" -->Links<!-- #EndEditable --></h1>
+  </div>
+
+ <div style="padding:20px; padding-top:55px;">
+
+<div id="pane1" class="scroll-pane text" style="height:165px; padding-right:10px;">
+      <!-- #BeginEditable "content" -->
+
+<div style="margin-bottom:10px">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td valign="top">
+<div>
+
+              <div class="titles">  </div>
+              <div style="padding-bottom:10px"><a title="Open Seas" href="http://www.openseas.gr/en/index.html" target="_blank">Open Seas<br /></a><a title="Athens airport" href="http://www.aia.gr/traveler/" target="_blank">Αεροδρόμιο Αθηνών Ελ. Βενιζέλος</a><br /> <a title="Meteo" href="http://www.meteo.gr/meteoplus/cf.cfm?city_id=16" target="_blank">Καιρός</a> <br /></div>
+
+
+</div>
+                  </td>
+                <td valign="top" align="right">
+                                  </td>
+              </tr>
+            </table>
+
+
+<div style="clear:both"></div>
+
+
+</div>
+
+
+                      <!-- #EndEditable -->
+</div>
+</div>
+
+  </div>
+</div>
+<!--END CONTAINER -->
+</div>
+
+</body>
+<!-- #EndTemplate --></html>
