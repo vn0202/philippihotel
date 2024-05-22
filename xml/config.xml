@@ -11,7 +11,8 @@ IN THIS XML FILE YOU WILL FIND GLOBAL SETTINGS FOR THE TEMPLATE AS WELL AS THE F
 	
 	<settings>
 		
-		<!-- The prefix to your browser titles, this should be the same as the <title> tag in the html page -->
+		<!-- The prefix to your browser titles, this should be the same as the   <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+<title> tag in the html page -->
 		<websiteName>PHILIPPI HOTEL| MYKONOS TOWN HOTEL | MYKONOS GREECE</websiteName>
 		
 		<!-- The url of the main template swf -->
